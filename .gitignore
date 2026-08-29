@@ -1,0 +1,8 @@
+# Vercel's local link/config — machine-specific, and contains project ids
+.vercel
+
+# macOS
+.DS_Store
+
+node_modules/
+*.log

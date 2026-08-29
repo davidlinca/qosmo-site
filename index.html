@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QOSMO — Launching soon on the App Store</title>
+<meta name="description" content="QOSMO helps young men build lasting freedom from pornography through daily discipline, honest tracking, and real accountability.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink-900:#12151A;
+    --ink-800:#1B1F26;
+    --ink-700:#262B34;
+    --paper:#EDEEEC;
+    --paper-dim:#9CA0A8;
+    --amber:#C9915B;
+    --amber-soft:#E3B98A;
+    --line:rgba(237,238,236,0.10);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink-900);
+    color:var(--paper);
+    font-family:'Space Grotesk', sans-serif;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+  a{color:inherit;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(18,21,26,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    height:76px;
+  }
+  .logo{
+    font-family:'Instrument Serif', serif;
+    font-size:26px;
+    letter-spacing:0.04em;
+  }
+  .logo span{color:var(--amber);}
+  .nav-links{display:flex; gap:36px; align-items:center; font-size:14px; color:var(--paper-dim);}
+  .nav-links a{transition:color 0.2s;}
+  .nav-links a:hover{color:var(--paper);}
+  .pill{
+    border:1px solid var(--line);
+    padding:9px 18px;
+    border-radius:100px;
+    font-size:13px;
+    color:var(--paper);
+    letter-spacing:0.02em;
+  }
+
+  /* HERO */
+  header.hero{
+    position:relative;
+    padding:140px 0 180px;
+    overflow:hidden;
+  }
+  .horizon{
+    position:absolute;
+    left:50%; transform:translateX(-50%);
+    bottom:-420px;
+    width:1400px; height:1400px;
+    border-radius:50%;
+    background:radial-gradient(circle at 50% 0%, var(--amber) 0%, rgba(201,145,91,0.25) 30%, rgba(201,145,91,0) 62%);
+    opacity:0.55;
+    pointer-events:none;
+  }
+  .hero-content{position:relative; z-index:2; text-align:center;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--amber-soft);
+    margin-bottom:28px;
+    opacity:0;
+    animation:rise 0.8s ease forwards 0.1s;
+  }
+  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--amber); box-shadow:0 0 10px var(--amber);}
+  h1{
+    font-family:'Instrument Serif', serif;
+    font-weight:400;
+    font-size:clamp(48px, 8vw, 92px);
+    line-height:1.04;
+    letter-spacing:-0.01em;
+    max-width:820px;
+    margin:0 auto;
+    opacity:0;
+    animation:rise 0.9s ease forwards 0.25s;
+  }
+  h1 em{font-style:italic; color:var(--amber-soft);}
+  .sub{
+    max-width:560px;
+    margin:28px auto 0;
+    color:var(--paper-dim);
+    font-size:18px;
+    opacity:0;
+    animation:rise 0.9s ease forwards 0.4s;
+  }
+  .cta-row{
+    margin-top:44px;
+    display:flex; gap:16px; justify-content:center; flex-wrap:wrap;
+    opacity:0;
+    animation:rise 0.9s ease forwards 0.55s;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:15px 26px;
+    border-radius:12px;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+    transition:transform 0.2s ease, opacity 0.2s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--paper);
+    color:var(--ink-900);
+  }
+  .btn-primary svg{width:18px; height:18px;}
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--paper);
+  }
+
+  @keyframes rise{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  /* STREAK ARC — signature element */
+  .arc-section{padding:0 0 120px; position:relative;}
+  .arc-card{
+    background:var(--ink-800);
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:56px clamp(24px,5vw,72px);
+    display:flex; align-items:center; gap:56px;
+    flex-wrap:wrap;
+  }
+  .arc-visual{flex:0 0 280px; position:relative; width:280px; height:180px;}
+  .arc-visual svg{width:100%; height:100%; overflow:visible;}
+  .arc-track{fill:none; stroke:var(--ink-700); stroke-width:10; stroke-linecap:round;}
+  .arc-fill{
+    fill:none; stroke:url(#arcGradient); stroke-width:10; stroke-linecap:round;
+    stroke-dasharray:377; stroke-dashoffset:377;
+    animation:fillArc 1.8s cubic-bezier(0.65,0,0.35,1) forwards 0.3s;
+  }
+  @keyframes fillArc{ to{stroke-dashoffset:70;} }
+  .arc-num{
+    position:absolute; left:50%; bottom:14px; transform:translateX(-50%);
+    text-align:center;
+  }
+  .arc-num .n{font-family:'Instrument Serif', serif; font-size:56px; color:var(--paper);}
+  .arc-num .l{font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--paper-dim);}
+  .arc-text h3{
+    font-family:'Instrument Serif', serif; font-weight:400;
+    font-size:32px; margin-bottom:14px; max-width:420px;
+  }
+  .arc-text p{color:var(--paper-dim); max-width:420px; font-size:15.5px;}
+
+  /* FEATURES */
+  .features{padding:20px 0 140px;}
+  .section-head{max-width:560px; margin-bottom:64px;}
+  .section-head .tag{
+    font-size:13px; letter-spacing:0.12em; text-transform:uppercase; color:var(--amber-soft); margin-bottom:16px; display:block;
+  }
+  .section-head h2{
+    font-family:'Instrument Serif', serif; font-weight:400;
+    font-size:clamp(32px,4vw,44px); line-height:1.15;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:20px;
+    overflow:hidden;
+  }
+  .card{
+    background:var(--ink-900);
+    padding:40px 32px;
+  }
+  .card .num{color:var(--amber); font-size:13px; letter-spacing:0.1em; margin-bottom:24px; display:block;}
+  .card h4{font-size:19px; font-weight:600; margin-bottom:12px;}
+  .card p{color:var(--paper-dim); font-size:15px;}
+
+  /* QUOTE */
+  .quote-section{padding:0 0 140px;}
+  .quote-card{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:64px 0;
+    text-align:center;
+  }
+  .quote-card blockquote{
+    font-family:'Instrument Serif', serif;
+    font-style:italic;
+    font-size:clamp(24px,3.4vw,36px);
+    max-width:720px;
+    margin:0 auto;
+    line-height:1.35;
+    color:var(--paper);
+  }
+  .quote-card cite{
+    display:block; margin-top:24px; font-style:normal; font-size:14px; color:var(--paper-dim);
+  }
+
+  /* NOTIFY */
+  .notify{padding:0 0 160px;}
+  .notify-card{
+    background:linear-gradient(160deg, var(--ink-800), var(--ink-900));
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:clamp(40px,6vw,80px);
+    text-align:center;
+  }
+  .notify h2{
+    font-family:'Instrument Serif', serif; font-weight:400;
+    font-size:clamp(32px,4.5vw,48px); margin-bottom:16px;
+  }
+  .notify p{color:var(--paper-dim); max-width:480px; margin:0 auto 36px;}
+  .notify-card .btn-primary{margin-top:8px;}
+  /* FOOTER */
+  footer{
+    border-top:1px solid var(--line);
+    padding:56px 0 40px;
+  }
+  .footer-top{
+    display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:32px;
+    margin-bottom:40px;
+  }
+  .footer-logo{font-family:'Instrument Serif', serif; font-size:22px;}
+  .footer-logo span{color:var(--amber);}
+  .footer-links{display:flex; gap:32px; flex-wrap:wrap; font-size:14px; color:var(--paper-dim);}
+  .footer-links a:hover{color:var(--paper);}
+  .footer-bottom{
+    border-top:1px solid var(--line);
+    padding-top:28px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:13px; color:var(--paper-dim);
+  }
+  .footer-legal{max-width:560px;}
+  .footer-legal b{color:var(--paper);}
+
+  @media (max-width:860px){
+    .grid{grid-template-columns:1fr;}
+    .arc-card{flex-direction:column; text-align:center;}
+    .arc-text p{margin:0 auto;}
+    .nav-links{display:none;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">QOS<span>MO</span></div>
+    <div class="nav-links">
+      <a href="#approach">Approach</a>
+      <a href="#support">Support</a>
+    </div>
+    <a href="#approach" class="pill">How it works</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="horizon"></div>
+  <div class="wrap hero-content">
+    <div class="eyebrow"><span class="dot"></span>Launching soon on the App Store</div>
+    <h1>Freedom is built <em>one honest day</em> at a time.</h1>
+    <p class="sub">QOSMO helps young men quit pornography for good — through daily tracking, blocking tools, and real accountability. No shame. Just structure that works.</p>
+    <div class="cta-row">
+      <a href="#approach" class="btn btn-primary">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.55C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.08-.42 1.44-1.38 2.82zM13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        Coming to iPhone
+      </a>
+      <a href="#support" class="btn btn-ghost">Contact us</a>
+    </div>
+  </div>
+</header>
+
+<section class="arc-section">
+  <div class="wrap">
+    <div class="arc-card">
+      <div class="arc-visual">
+        <svg viewBox="0 0 280 180">
+          <defs>
+            <linearGradient id="arcGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#8A6A45"/>
+              <stop offset="100%" stop-color="#E3B98A"/>
+            </linearGradient>
+          </defs>
+          <path class="arc-track" d="M 20 170 A 120 120 0 0 1 260 170"/>
+          <path class="arc-fill" d="M 20 170 A 120 120 0 0 1 260 170"/>
+        </svg>
+        <div class="arc-num">
+          <div class="n">73</div>
+          <div class="l">Day streak</div>
+        </div>
+      </div>
+      <div class="arc-text">
+        <h3>Progress you can actually see.</h3>
+        <p>Every streak, urge logged, and site blocked adds up on one simple screen — so momentum stops being a feeling and starts being a fact.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">The approach</span>
+      <h2>Three things that actually change behavior.</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <span class="num">01</span>
+        <h4>Site &amp; app blocking</h4>
+        <p>Device-level filtering that removes the easiest path back, without a complicated setup.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h4>Daily check-ins</h4>
+        <p>A 60-second log for mood, triggers, and urges — the same habit that makes recovery programs work.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h4>A streak you can watch grow</h4>
+        <p>Eight crystals mark the road from day one to day ninety. Each unlocks as you reach it, so the work has something to show for it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-section">
+  <div class="wrap">
+    <div class="quote-card">
+      <blockquote>&ldquo;You don't need more willpower. You need a system that makes the right choice the easy one.&rdquo;</blockquote>
+      <cite>— QOSMO founding principle</cite>
+    </div>
+  </div>
+</section>
+
+<section class="notify" id="notify">
+  <div class="wrap">
+    <div class="notify-card">
+      <h2>Coming to the App&nbsp;Store.</h2>
+      <p>QOSMO is in final review and will be available on iPhone shortly. No waitlist, no early access — nothing to sign up for.</p>
+      <a href="mailto:david@qosmoapp.com" class="btn btn-primary">Questions? Get in touch</a>
+    </div>
+  </div>
+</section>
+
+<footer id="support">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-logo">QOS<span>MO</span></div>
+      <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
+        <a href="mailto:david@qosmoapp.com">Support</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <b>DAVILEX SOFT SRL</b> — QOSMO is developed and published by DAVILEX SOFT SRL.
+        For support inquiries, contact <a href="mailto:david@qosmoapp.com">david@qosmoapp.com</a>.
+      </div>
+      <div>© 2026 DAVILEX SOFT SRL. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
