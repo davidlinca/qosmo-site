@@ -1,6 +1,6 @@
 # Terms of Use
 
-**Last updated:** 28 August 2026
+**Last updated:** 12 September 2026
 
 These terms govern your use of QOSMO, operated by **DAVILEX SOFT S.R.L.**, a
 company registered in Romania ("we", "us").
@@ -99,9 +99,10 @@ under a handle we generate for you rather than your real name, but that
 protects your identity only as far as what you write does — do not share
 anything you would not want another member to read.
 
-We may remove content and suspend accounts that breach these rules. You can
-report content and block users from within the app; reports are reviewed and
-acted on.
+**There is no tolerance for objectionable content or abusive users.** We remove
+content that breaks these rules and ban the accounts responsible. You can
+report content and block users from within the app; reports are reviewed
+promptly and acted on.
 
 If a post suggests someone is at risk of harming themselves, we may act on that
 information, including contacting emergency services where we believe there is a
