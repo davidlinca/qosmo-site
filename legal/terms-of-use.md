@@ -1,6 +1,6 @@
 # Terms of Use
 
-**Last updated:** 12 September 2026
+**Last updated:** 13 September 2026
 
 These terms govern your use of QOSMO, operated by **DAVILEX SOFT S.R.L.**, a
 company registered in Romania ("we", "us").
@@ -30,9 +30,8 @@ are in immediate danger, contact your local emergency services.
 
 ## 2. Eligibility
 
-You must be at least 16 years old to use QOSMO, and the app is rated 17+ on the
-App Store. By using it you confirm you meet the age requirement and can enter
-into a binding agreement.
+You must be at least 16 years old to use QOSMO. By using it you confirm you meet
+the age requirement and can enter into a binding agreement.
 
 ---
 
